@@ -30,7 +30,7 @@ namespace Nunit_test
         }
 
         [Test]
-        public void Test1()  
+        public void CreateProduct()  
         {
             
             
@@ -44,7 +44,7 @@ namespace Nunit_test
             IWebElement ButtunProducts = driver.FindElement(By.XPath("(//a[text()=\"All Products\"])[2]"));
             new Actions(driver).Click().Click(ButtunProducts).Build().Perform();// actions 1
 
-            IWebElement element = driver.FindElement(By.XPath("//h2[text()=\"All Products\"]"));
+            IWebElement allProducttext = driver.FindElement(By.XPath("//h2[text()=\"All Products\"]"));
             driver.FindElement(By.XPath("//a[text()=\"Create new\"]")).Click();
 
             //input
@@ -66,45 +66,41 @@ namespace Nunit_test
 
 
         [Test]
-        public void Test2()
+        public void LookProduct()
         {
             driver.FindElement(By.XPath("(//a[text()=\"All Products\"])[2]")).Click();
             //control
             var NameCategory = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[1]")).Text;
-            Assert.AreEqual("Beverages", NameCategory);
-
             var NameSupplier = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[2]")).Text;
-            Assert.AreEqual("Tokyo Traders", NameSupplier);
-
             var NameQuantityPerUnit = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[3]")).Text;
-            Assert.AreEqual("102", NameQuantityPerUnit);
-
             var NameUnitPrice = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[4]")).Text;
-            Assert.AreEqual("100,0000", NameUnitPrice);
-
             var NameUnitsInStock = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[5]")).Text;
-            Assert.AreEqual("65", NameUnitsInStock);
-
             var NameUnitsOnOrder = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[6]")).Text;
-            Assert.AreEqual("103", NameUnitsOnOrder);
-
             var NameReorderLevel = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[7]")).Text;
-            Assert.AreEqual("104", NameReorderLevel);
 
-
+            Assert.Multiple(() =>
+                {
+                    Assert.AreEqual("Beverages", NameCategory);
+                    Assert.AreEqual("104", NameReorderLevel);
+                    Assert.AreEqual("Tokyo Traders", NameSupplier);
+                    Assert.AreEqual("102", NameQuantityPerUnit);
+                    Assert.AreEqual("100,0000", NameUnitPrice);
+                    Assert.AreEqual("65", NameUnitsInStock);
+                    Assert.AreEqual("103", NameUnitsOnOrder);
+                });
         }
        
 
 
         [Test]
-        public void Test3()
+        public void DeleteProduct()
         {
-           IWebElement element3= driver.FindElement(By.XPath("(//a[text()=\"All Products\"])[2]"));
-            new Actions(driver).Click().Click(element3).Build().Perform();// actions 2
+           IWebElement allProducttext = driver.FindElement(By.XPath("(//a[text()=\"All Products\"])[2]"));
+            new Actions(driver).Click().Click(allProducttext).Build().Perform();// actions 2
 
             //delete
-           IWebElement element4= driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[12]"));
-            new Actions(driver).Click().Click(element4).Build().Perform();// actions 3
+           IWebElement deleteclick= driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[12]"));
+            new Actions(driver).Click().Click(deleteclick).Build().Perform();// actions 3
             
             driver.SwitchTo().Alert().Accept();
             driver.FindElement(By.XPath("//*[text()=\"Logout\"]")).Click();

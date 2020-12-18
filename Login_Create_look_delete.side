@@ -5,7 +5,7 @@
   "url": "http://localhost:5000",
   "tests": [{
     "id": "d1510c1e-6a09-4512-bc16-a0ed456da5b5",
-    "name": "2_CreateProduct",
+    "name": "2_CreateProduct_Look_delete",
     "commands": [{
       "id": "6761900d-dc66-4c94-9eda-5742c73918d7",
       "comment": "",
@@ -377,7 +377,7 @@
       "value": ""
     }, {
       "id": "9dcf7c07-f6f0-441c-9217-15e7324e1fbf",
-      "comment": "",
+      "comment": "Удаление",
       "command": "click",
       "target": "(//*[contains(text(),\"Product4\")]/parent::*/following-sibling::*)[10]/a",
       "targets": [

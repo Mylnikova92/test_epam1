@@ -1,0 +1,76 @@
+{
+  "id": "85fd0a55-7989-4656-84a8-670cd793ad24",
+  "version": "2.0",
+  "name": "DeleteProduct",
+  "url": "http://localhost:5000",
+  "tests": [{
+    "id": "7dabf94e-73fb-4bff-937f-4b2c84cf78b4",
+    "name": "Remove product",
+    "commands": [{
+      "id": "a5ab3f0b-0177-4663-8611-3da2aa6169e1",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "660c316b-8431-4d56-8f0d-d2501e915076",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12d6d66a-200a-4670-91e7-61ca746dde3c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=All Products",
+      "targets": [
+        ["linkText=All Products", "linkText"],
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'All Products')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Product')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All Products')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "509d4445-a2be-4617-83db-f69c49d0d21e",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "033d989f-62d9-490a-b981-04b1bead338b",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(79) > td:nth-child(12) > a",
+      "targets": [
+        ["css=tr:nth-child(79) > td:nth-child(12) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Remove')])[78]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Product/Remove?ProductId=78')]", "xpath:href"],
+        ["xpath=//tr[79]/td[12]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d958d37b-2e41-471b-baa5-4729714e1438",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b4d91ef3-fb12-486a-a096-8a3d3d4a51dc",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7dabf94e-73fb-4bff-937f-4b2c84cf78b4"]
+  }],
+  "urls": ["http://localhost:5000/"],
+  "plugins": []
+}

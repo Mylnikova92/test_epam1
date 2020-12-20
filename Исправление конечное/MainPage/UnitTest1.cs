@@ -7,6 +7,8 @@ using System.Threading;
 using System.Text.Encodings.Web;
 using Nunit_test.PageObject;
 using Nunit_test.MainPage;
+using Nunit_test.businesobject;
+
 
 namespace Nunit_test
 {
@@ -14,7 +16,7 @@ namespace Nunit_test
     {
         private IWebDriver driver;
         private Enterlogin enterlogin;
-        private Product product;
+        private inputProduct product;
 
         [SetUp]
         public void Setup()
@@ -34,29 +36,9 @@ namespace Nunit_test
         public void CreateProduct()  
         {
             
-            
-            //login
+            product = new inputProduct(driver);
+            product.InputProduct("Product5");
            
-            //controlhomepage
-            var NamePage = driver.FindElement(By.XPath("//*[text()=\"Home page\"]")).Text;
-            Assert.AreEqual("Home page", NamePage);
-
-            //createnewproduct
-            IWebElement ButtunProducts = driver.FindElement(By.XPath("(//a[text()=\"All Products\"])[2]"));
-            new Actions(driver).Click().Click(ButtunProducts).Build().Perform();// actions 1
-
-            IWebElement allProducttext = driver.FindElement(By.XPath("//h2[text()=\"All Products\"]"));
-            driver.FindElement(By.XPath("//a[text()=\"Create new\"]")).Click();
-
-            //input page object
-            product = new Product(driver);
-            product.InputProduct();
-            
-
-           
-            driver.FindElement(By.CssSelector(".btn.btn-default")).Click(); //save 
-        
-
         }
         
 
@@ -64,26 +46,8 @@ namespace Nunit_test
         [Test]
         public void LookProduct()
         {
-            driver.FindElement(By.XPath("(//a[text()=\"All Products\"])[2]")).Click();
-            //control
-            var NameCategory = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[1]")).Text;
-            var NameSupplier = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[2]")).Text;
-            var NameQuantityPerUnit = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[3]")).Text;
-            var NameUnitPrice = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[4]")).Text;
-            var NameUnitsInStock = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[5]")).Text;
-            var NameUnitsOnOrder = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[6]")).Text;
-            var NameReorderLevel = driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[7]")).Text;
-
-            Assert.Multiple(() =>
-                {
-                    Assert.AreEqual("Beverages", NameCategory);
-                    Assert.AreEqual("104", NameReorderLevel);
-                    Assert.AreEqual("Tokyo Traders", NameSupplier);
-                    Assert.AreEqual("102", NameQuantityPerUnit);
-                    Assert.AreEqual("100,0000", NameUnitPrice);
-                    Assert.AreEqual("65", NameUnitsInStock);
-                    Assert.AreEqual("103", NameUnitsOnOrder);
-                });
+            LookProduct look = new LookProduct(driver);
+            look.lookproduct();
         }
        
 
@@ -91,23 +55,9 @@ namespace Nunit_test
         [Test]
         public void DeleteProduct()
         {
-           IWebElement allProducttext = driver.FindElement(By.XPath("(//a[text()=\"All Products\"])[2]"));
-            new Actions(driver).Click().Click(allProducttext).Build().Perform();// actions 2
-
-            //delete
-           IWebElement deleteclick= driver.FindElement(By.XPath("(//*[text()=\"Product5\"]/following::*)[12]"));
-            new Actions(driver).Click().Click(deleteclick).Build().Perform();// actions 3
+             DeleteProduct Delete = new DeleteProduct(driver);
+            Delete.deleteproduct();
             
-            driver.SwitchTo().Alert().Accept();
-            driver.FindElement(By.XPath("//*[text()=\"Logout\"]")).Click();
-
-            var NamePage2 = driver.FindElement(By.XPath("//*[text()=\"Login\"]")).Text;
-            Assert.AreEqual("Login", NamePage2);
-
-            driver.FindElement(By.CssSelector("#Name.form-control")).SendKeys("user");
-            driver.FindElement(By.CssSelector("#Password.form-control")).SendKeys("user");
-            driver.FindElement(By.CssSelector(".btn.btn-default")).Click();
-
         }
 
         [TearDown]

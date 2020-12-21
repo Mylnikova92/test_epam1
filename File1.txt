@@ -1,4 +1,0 @@
-DCommit1
-WCommit1
-
-Wcommit2

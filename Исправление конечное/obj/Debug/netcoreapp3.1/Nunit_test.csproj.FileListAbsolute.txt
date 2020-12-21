@@ -98,3 +98,9 @@ C:\Users\user\source\repos\Nunit_test\obj\Debug\netcoreapp3.1\Nunit_test.pdb
 C:\Users\user\source\repos\Nunit_test\obj\Debug\netcoreapp3.1\Nunit_test.genruntimeconfig.cache
 C:\Users\user\source\repos\Nunit_test\bin\Debug\netcoreapp3.1\SeleniumExtras.PageObjects.dll
 C:\Users\user\source\repos\Nunit_test\bin\Debug\netcoreapp3.1\SeleniumExtras.WaitHelpers.dll
+C:\Repository_epam\test_epam1\Исправление конечное\obj\Debug\netcoreapp3.1\Nunit_test.csprojAssemblyReference.cache
+C:\Repository_epam\test_epam1\Исправление конечное\obj\Debug\netcoreapp3.1\Nunit_test.AssemblyInfoInputs.cache
+C:\Repository_epam\test_epam1\Исправление конечное\obj\Debug\netcoreapp3.1\Nunit_test.AssemblyInfo.cs
+C:\Repository_epam\test_epam1\Исправление конечное\obj\Debug\netcoreapp3.1\Nunit_test.csproj.CoreCompileInputs.cache
+C:\Repository_epam\test_epam1\Исправление конечное\obj\Debug\netcoreapp3.1\Nunit_test.dll
+C:\Repository_epam\test_epam1\Исправление конечное\obj\Debug\netcoreapp3.1\Nunit_test.pdb

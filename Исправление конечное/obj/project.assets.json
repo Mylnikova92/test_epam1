@@ -4754,11 +4754,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\Nunit_test\\Nunit_test.csproj",
+      "projectUniqueName": "C:\\Repository_epam\\test_epam1\\Исправление конечное\\Nunit_test.csproj",
       "projectName": "Nunit_test",
-      "projectPath": "C:\\Users\\user\\source\\repos\\Nunit_test\\Nunit_test.csproj",
+      "projectPath": "C:\\Repository_epam\\test_epam1\\Исправление конечное\\Nunit_test.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\Nunit_test\\obj\\",
+      "outputPath": "C:\\Repository_epam\\test_epam1\\Исправление конечное\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

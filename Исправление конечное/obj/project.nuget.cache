@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qWc9Gd4qn8NI+iT1aM/8//gUo0juTursapZiRXyAofQMKfJ9zhkZ4ua/P6E1VTgRbPKcHmZf1jPEx9pcjpSW7A==",
+  "dgSpecHash": "09KjFxZVfMe0BQGlfQtRYeU0BMDZ4PApiW8fb3ycsZ5Jj0i8ex8H15zY6WO7deDiJ5xsnO2OdAelBhhNy4qGNw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\repos\\Nunit_test\\Nunit_test.csproj",
+  "projectFilePath": "C:\\Repository_epam\\test_epam1\\Исправление конечное\\Nunit_test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\dotnetseleniumextras.pageobjects\\3.11.0\\dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\dotnetseleniumextras.pageobjects.core\\3.12.0\\dotnetseleniumextras.pageobjects.core.3.12.0.nupkg.sha512",

@@ -7,8 +7,8 @@ namespace SeleniumAdvansed.pageobject
 {
     class Login
     {
-        private IWebDriver driver;
-       
+        public IWebDriver driver;
+
 
         public Login(IWebDriver driver)
         {
@@ -17,7 +17,7 @@ namespace SeleniumAdvansed.pageobject
         }
 
        
-        private IWebElement allproductsbutton => driver.FindElement(By.XPath("(//a[text()=\"All Products\"])[2]"));
+        
         private IWebElement logininput => driver.FindElement(By.CssSelector("#Name.form-control"));
         private IWebElement passwordinput => driver.FindElement(By.CssSelector("#Password.form-control"));
         private IWebElement enterinput => driver.FindElement(By.CssSelector(".btn.btn-default"));
@@ -28,7 +28,7 @@ namespace SeleniumAdvansed.pageobject
             passwordinput.SendKeys(password);
             enterinput.Click();
 
-            allproductsbutton.Click();
+            
 
         }
         

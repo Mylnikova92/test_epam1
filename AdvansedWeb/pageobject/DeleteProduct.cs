@@ -8,7 +8,7 @@ namespace SeleniumAdvansed.pageobject
 {
     class DeleteProduct
     {
-        private IWebDriver driver;
+        public IWebDriver driver;
 
 
         public DeleteProduct(IWebDriver driver)

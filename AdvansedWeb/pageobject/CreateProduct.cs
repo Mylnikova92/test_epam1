@@ -3,14 +3,15 @@ using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace SeleniumAdvansed.pageobject
 {
    class CreateProduct
     {
-        private IWebDriver driver;
+        public IWebDriver driver;
 
-        
+
         public CreateProduct(IWebDriver driver)
         {
             this.driver = driver;
@@ -29,28 +30,33 @@ namespace SeleniumAdvansed.pageobject
         private IWebElement nameReorderLevel => driver.FindElement(By.CssSelector("#ReorderLevel.form-control"));
         private IWebElement namesavebutton => driver.FindElement(By.CssSelector(".btn.btn-default"));
 
-        public void InputProduct(string product)
+        public void InputProduct(string product, string nameCategory, string nameSupplier, string nameUnits, string nameUnitPri, string nameQuantity, string nameUnitsOn, string nameReorder)
         {
 
-            new Actions(driver).Click().Click(createbutton).Build().Perform(); 
+            new Actions(driver).Click().Click(createbutton).Build().Perform();
 
             nameProduct.SendKeys(product);
-
             new Actions(driver).Click().Click(nameCategoryId).Build().Perform();
-            new Actions(driver).SendKeys(nameCategoryId, "Beverages").Build().Perform();
+            new Actions(driver).SendKeys(nameCategoryId, nameCategory).Build().Perform();
+            nameSupplierId.SendKeys(nameSupplier);
+            nameUnitsInStock.SendKeys(nameUnits);
+            nameUnitPrice.SendKeys(nameUnitPri);
+            nameQuantityPerUnit.SendKeys(nameQuantity);
+            nameUnitsOnOrde.SendKeys(nameUnitsOn);
+            nameReorderLevel.SendKeys(nameReorder);
 
-           
-            nameSupplierId.SendKeys("Tokyo Traders");
-            nameUnitsInStock.SendKeys("65");
-            nameUnitPrice.SendKeys("100");
-            nameQuantityPerUnit.SendKeys("102");
-            nameUnitsOnOrde.SendKeys("103");
-            nameReorderLevel.SendKeys("104");
-
-            new Actions(driver).Click().Click(namesavebutton).Build().Perform();
-
+            driver.FindElement(By.CssSelector(".btn.btn-default")).Click();
+             
+            Thread.Sleep(1000);
 
         }
+
+        
+
+           
+
+
+        
     }
 }
 
